@@ -4,12 +4,14 @@
 	    [compojure.core :as c]))
 
 (def facebook
-  (c/GET "/" {} "hello world!")
+  (c/GET "/" {} "hello world!"))
+
+(def facebook-post
   (c/POST "/" {} "hello world!"))
 
-(c/defroutes app facebook)
+(c/defroutes app facebook facebook-post)
 
-(c/defroutes dev-app facebook)
+(c/defroutes dev-app facebook facebook-post)
 
 (defn -main [& args]
   (cccl/with-command-line args
