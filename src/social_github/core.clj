@@ -4,7 +4,8 @@
 	    [compojure.core :as c]))
 
 (def facebook
-  (c/GET "/" {} "hello world!"))
+  (c/GET "/" {} "hello world!")
+  (c/POST "/" {} "hello world!"))
 
 (c/defroutes app facebook)
 
